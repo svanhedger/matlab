@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="shortcut icon" href="favicon.ico">
+<title>Van Hedger | Matlab</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<style>
+body,h1,h2,h3,h4,h5,h6,p {font-family: "Arial", sans-serif}
+.w3-navbar,h1,button {font-family: "Arial", sans-serif}
+.fa-anchor,.fa-coffee {font-size:150px}
+ ul {background-color: #e31838;}
+ a:hover {color: black}
+ 
+ hr.rounded {
+  border-top: 5px solid #bbb;
+  border-radius: 0px;
+  width:100%;
+  display: inline-block;
+  vertical-align:center;
+}
+
+button {
+	background-color: #fff;
+	border: 2px solid #e31838;
+	border-radius: 5px;
+	margin:5px;
+}
+
+button:hover,
+button:focus {
+	background-color: #e31838;
+	color: white;
+	border: 2px solid #e31838;
+	transition: 0.1s;
+}
+
+.button {
+	background-color: #fff;
+	border: 2px solid #e31838;
+	border-radius: 5px;
+	margin:5px;
+}
+
+.button:hover {
+	background-color: #e31838;
+	color: white;
+	border: 2px solid #e31838;
+	transition: 0.1s;
+}
+
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;               
+  background-color:#000;
+  height: 1px;
+}
+
+
+</style>
+<body>
+
+
+<!-- Navbar -->
+<div class="w3-top">
+  <ul class="w3-navbar w3-card-2 w3-left-align w3-large">
+    <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
+      <a class="w3-padding-large w3-hover-white w3-large w3-grey" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    </li>
+    <li><a href="https://svanhedger.github.io" class="w3-padding-large w3-hover-white" style=color:white>Home</a></li>
+    <li class="w3-hide-small"><a href="https://publish.uwo.ca/~svanhedg/Experiments/experiments.html" class="w3-padding-large w3-hover-white" style=color:white>Participate</a></li>
+	<li class="w3-hide-small"><a href="https://svanhedger.github.io/jspsych/" class="w3-padding-large w3-hover-white" style=color:white>jsPsych Scripts</a></li>
+	<li class="w3-hide-small"><a href="https://svanhedger.github.io/matlab/" class="w3-padding-large w3-white">Matlab Scripts</a></li>
+  </ul>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-hide w3-hide-large w3-hide-medium">
+    <ul class="w3-navbar w3-left-align w3-large w3-indigo">
+	  <li><a class="w3-padding-large" style=color:white href="https://svanhedger.github.io">Home</a></li>	
+      <li><a class="w3-padding-large" style=color:white href="https://publish.uwo.ca/~svanhedg/Experiments/experiments.html">Participate</a></li>
+	  <li><a class="w3-padding-large" style=color:white href="https://svanhedger.github.io/jspsych/">jsPsych Scripts</a></li>
+	  <li><a class="w3-padding-large" style=color:white href="https://svanhedger.github.io/matlab/">Matlab Scripts</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-white w3-center w3-padding-64">
+  <h1 class="w3-margin w3-xxlarge"><b>Matlab Scripts</b></h1>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-16 w3-container">
+  <div class="w3-content">
+    <div class="w3-threequarter">
+      <h2 class "w3-medium w3-large"><b>Overview</b></h2>
+      <h5 class="w3-padding-16" style="text-align:justify;"><p>In several of my research projects, I use <a href="https://www.mathworks.com/products/matlab.html" style="color:#e31838;"><b>Matlab</b></a>
+	  for signal processing and data analysis. You are welcome to use any of the Matlab scripts on this page. Given that many of my scripts are used in service of auditory stimulus creation, 
+	  I have provided some auditory examples of what the scripts produce, in addition to the code.</p></h5>
+
+    </div>
+
+    <div class="w3-quarter w3-right">
+      <figure><img src="img/matlab.png" alt="" style="width:25vw;height:30vh;"></figure>
+    </div>
+  </div>
+</div>
+
+
+  <hr class="rounded"></hr>
+<div class="w3-row-padding w3-padding-16 w3-container w3-light-grey">
+  <div class="w3-content">
+    <div class="w3-threequarter">
+      <h2 class "w3-medium w3-large"><b>Scripts</b></h2>
+	  
+      <h3 class="w3-padding-16"><b style="color:#e31838;">Tone Clouds</b><div style="float:right;"><input class='button' id='cloudbutton' type='button' value='Play' onclick='playCloud()'><audio preload='auto' id='playerCloud' src=''></audio></input><button><a style="text-decoration: none;" href="https://github.com/svanhedger/jspsych/tree/master/scripts/backward-digit-span/">Repo</a></button></div></h3>
+	  <h5 style="text-align:justify;">This script generates <em>tone clouds</em>, which are used in research to probe auditory perception and attention. The tone clouds produced by this script 
+	  are based on those described by Ding et al. (2018) <em>J. Neurosci</em>. The tone clouds consist of a standard, regularly repeating tone. Given the current configuration, this tone plays at a 3 Hz rate. 
+	  This standard tone is flanked by dense "clouds" of tone scrambles (0.5 to 2.5 octaves above and below the standard tone), which makes attending to the standard tone quite demanding. 
+	  The standard tone occasionally deviates (shifts) in pitch. Participants must report how many times the standard pitch deviates. The provided example is a 32-second stimulus, in which the 
+	  standard tone deviates three times.</h5>
+	  <hr>
+	  
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+<div class="w3-container w3-grey w3-center w3-opacity w3-padding-16">
+    <h1 class="w3-margin w3-large"></h1>
+</div>
+<h5 class="w3-padding-large w3-left-align">
+<a href="https://osf.io/h3x8g/" target="_blank" id="osf"><center><img src="img/cos.png" name="cos" id="cos" alt="cos" style="width:100px;height:63px;border:1px solid black"/></center></a>
+<a href="https://scholar.google.com/citations?user=n2T5t1cAAAAJ&hl=en&oi=ao" target="_blank" id="scholar"><center><img src="img/google-scholar.png"  name="google-scholar" id="google-scholar" alt="google-scholar" style="width:50px;height:50px;border:1px solid black"/></center></a>
+<a href="https://www.researchgate.net/profile/Stephen_Van_Hedger" target="_blank" id="RG"><center><img src="img/research-gate.png" name="RG" id="RG" alt="RG" style="width:50px;height:50px;border:1px solid black"/></center></a>
+
+<p style="font-size:15px"><center>&#169; Stephen Van Hedger. Website template adapted from from W3Schools.com. Updated April 2020.</center></p>
+</h5>
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+
+
+var playPause;
+
+function playCloud() {
+	//Toggle play/pause
+	playPause ^= true;
+		var playsound = 'scripts/tone-cloud/example.wav';
+		var audio = document.getElementById('playerCloud');
+		document.getElementById('playerCloud').src = playsound;	
+	if(playPause == true){
+		audio.play(); //this actually plays the file
+	    document.getElementById('cloudbutton').value = 'Stop';	
+		} else {
+		audio.pause(); //this pauses the audio file
+		document.getElementById('cloudbutton').value = 'Play';	
+		}
+};
+
+
+</script>
+
+</body>
+</html>
